@@ -1,6 +1,7 @@
 #pragma once
 #include <string>
 #include "EGenre.h"
+#include <cstddef>
 
 using namespace std;
 
@@ -10,23 +11,28 @@ class Movie
 	string title;
 	float length;
 	Genre genre;
-	string director;
 	string mainActor;
-	string mainActress;
+	int rating;
+
+	
 
 public:
+	// Linked List node 
+	Movie* next;
 
 	//SIGNATURES
 	//Declare constructor and destructor
-	Movie(string title, float length, Genre genre, string director, string mainActor, string mainActress);
-	~Movie();
 
+	Movie(string title, float length, Genre genre, string director, string mainActor, int rating);
+	~Movie();
+	// Linked List node 
+	Movie* next;
 	//Declare getters
 	string GetTitle();
 	float GetLength();
 	Genre GetGenre();
-	string GetDirector();
 	string GetMainActor();
-	string GetMainActress();
+	int GetRating();
+	string toString();
 };
 

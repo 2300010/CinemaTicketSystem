@@ -3,7 +3,7 @@
 
 //Definition
 //Declare constructor and destructor
-Movie::Movie(string title, float length, Genre genre, string director, string mainActor, string mainActress)
+Movie::Movie(string title, float length, Genre genre, string director, string mainActor, int rating)
 {
 	try
 	{
@@ -86,11 +86,22 @@ string Movie::GetMainActor()
 	}
 }
 
-string Movie::GetMainActress() 
+int Movie::GetRating() 
 {
 	try
 	{
-		return mainActress;
+		return rating;
+	}
+	catch (...)
+	{
+
+	}
+}
+
+string Movie::toString() {
+	try
+	{
+		return "Movie : " + title + ", length: " + to_string(length) + ", " + " genre : " + to_string(genre) + ", " + "Actor : " + mainActor + ", rating out of 10 : "+ to_string(rating);  
 	}
 	catch (...)
 	{

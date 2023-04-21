@@ -2,10 +2,14 @@
 //
 
 #include <iostream>
+#include "CinemaTicketSystem.h"
+#include "Cinema.h"
+
+Cinema cinema;
 
 int main()
 {
-    
+    Cinema cinema = new Cinema();
 }
 
 
