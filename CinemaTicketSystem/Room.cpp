@@ -2,10 +2,14 @@
 
 //DEFINITIONS
 //Declare constructor and destructor
-Room::Room() 
+Room::Room(int idNumber, int seatsAmount, double ticketPrice, ERoomType roomType)
 {
-
+	this->idNumber = idNumber;
+	this->seatsAmount = seatsAmount;
+	this->ticketPrice = ticketPrice;
+	this->roomType = roomType;
 }
+
 Room::~Room()
 {
 

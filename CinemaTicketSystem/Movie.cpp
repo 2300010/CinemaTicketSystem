@@ -5,13 +5,19 @@
 //Declare constructor and destructor
 Movie::Movie(string title, float length, Genre genre, string director, string mainActor, int rating)
 {
-	this->title = title;
-	this->length = length;
-	this->genre = genre;
-	this->director = director;
-	this->mainActor = mainActor;
-	this->rating = rating;
-	this->next = NULL;
+	try
+	{
+		this->title = title;
+		this->length = length;
+		this->genre = genre;
+		this->director = director;
+		this->mainActor = mainActor;
+		this->mainActress = mainActress;
+	}
+	catch (...)
+	{
+
+	}
 }
 
 Movie::~Movie() 

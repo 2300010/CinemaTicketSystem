@@ -15,7 +15,7 @@ public:
 
 	//SIGNATURES
 	//Declare constructor and destructor
-	Room();
+	Room(int idNumber, int seatsAmount, double ticketPrice, ERoomType roomType);
 	~Room();
 
 	//Declare getters and setters

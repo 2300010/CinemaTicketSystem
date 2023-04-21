@@ -24,7 +24,7 @@ public:
 
 	//Declare getters and setters
 	int GetRoomAmount();
-	void SetRoomAmount();
+	void SetRoomAmount(int newAmount);
 
 	//Methode that generates a schedule for every movie
 	void GenerateSchedule();
