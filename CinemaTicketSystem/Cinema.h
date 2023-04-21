@@ -1,7 +1,7 @@
 #pragma once
-#include "MovieList.h"
 #include "Room.h"
 #include "Schedule.h"
+#include "MovieList.cpp"
 
 class Cinema
 {
@@ -19,7 +19,7 @@ public:
 
 	//SIGNATURES
 	//Declare constructor and destructor
-	Cinema(int roomAmount);
+	Cinema(MovieList, int roomAmount);
 	~Cinema();
 
 	//Declare getters and setters
