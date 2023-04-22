@@ -1,15 +1,14 @@
 #pragma once
-#include "MovieList.h"
+#include "MovieList.cpp"
 #include "ERoomType.h"
 
-class Room
+struct Room
 {
 	//Declare variables for the information of the room
-	int idNumber;
-	int seatsAmount;
-	double ticketPrice;
-	//MovieList
-	ERoomType roomType;
+	int idNumber = 0;
+	int seatsAmount = 0;
+	double ticketPrice = 0;
+	ERoomType roomType = Regular;
 
 public:
 

@@ -12,7 +12,6 @@ Movie::Movie(string title, float length, Genre genre, string director, string ma
 		this->genre = genre;
 		this->director = director;
 		this->mainActor = mainActor;
-		this->mainActress = mainActress;
 	}
 	catch (...)
 	{

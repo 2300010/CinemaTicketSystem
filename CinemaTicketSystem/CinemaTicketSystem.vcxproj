@@ -148,7 +148,6 @@
     <ClInclude Include="EGenre.h" />
     <ClInclude Include="InformationManager.h" />
     <ClInclude Include="Movie.h" />
-    <ClInclude Include="MovieList.h" />
     <ClInclude Include="Reservation.h" />
     <ClInclude Include="ReservationManager.h" />
     <ClInclude Include="Room.h" />

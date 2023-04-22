@@ -5,11 +5,18 @@
 #include "CinemaTicketSystem.h"
 #include "Cinema.h"
 
-Cinema cinema;
-
 int main()
 {
-    Cinema cinema = new Cinema();
+    //TEST BINARY TREE
+    int roomAmount = 7;
+
+    Cinema cinema(roomAmount);
+
+    cout << "All Good?" << endl;
+
+    system("Pause");
+
+    cout << "The room id is: " << cinema.SearchRoomById(cinema.GetRoot(), 7)->room.GetIdNumber() << endl;
 }
 
 

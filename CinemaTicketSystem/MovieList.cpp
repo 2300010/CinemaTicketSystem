@@ -28,7 +28,7 @@ public:
     void remove(Movie data) {
         Movie* temp = head;
         Movie* prev = NULL;
-        while (temp != NULL && temp->GetTitle() != data) {
+        while (temp != NULL && temp->GetTitle() != data.GetTitle()) {
             prev = temp;
             temp = temp->next;
         }

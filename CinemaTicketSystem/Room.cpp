@@ -20,7 +20,7 @@ int Room::GetIdNumber()
 {
 	try
 	{
-		return idNumber;
+		return this->idNumber;
 	}
 	catch (...)
 	{
@@ -32,7 +32,7 @@ int Room::GetSeatsAmount()
 {
 	try
 	{
-		return seatsAmount;
+		return this->seatsAmount;
 	}
 	catch (...)
 	{
@@ -44,7 +44,7 @@ double Room::GetTicketPrice()
 {
 	try
 	{
-		return ticketPrice;
+		return this->ticketPrice;
 	}
 	catch (...)
 	{
@@ -56,7 +56,7 @@ void Room::SetTicketPrice(double newPrice)
 {
 	try
 	{
-		ticketPrice = newPrice;
+		this->ticketPrice = newPrice;
 	}
 	catch (...)
 	{
@@ -68,7 +68,7 @@ ERoomType Room::GetRoomType()
 {
 	try
 	{
-		return roomType;
+		return this->roomType;
 	}
 	catch (...)
 	{

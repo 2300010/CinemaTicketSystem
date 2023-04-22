@@ -11,6 +11,7 @@ class Movie
 	string title;
 	float length;
 	Genre genre;
+	string director;
 	string mainActor;
 	int rating;
 
@@ -26,11 +27,12 @@ public:
 	Movie(string title, float length, Genre genre, string director, string mainActor, int rating);
 	~Movie();
 	// Linked List node 
-	Movie* next;
+	//Movie* next;				EN DOUBLE! SA
 	//Declare getters
 	string GetTitle();
 	float GetLength();
 	Genre GetGenre();
+	string GetDirector();
 	string GetMainActor();
 	int GetRating();
 	string toString();

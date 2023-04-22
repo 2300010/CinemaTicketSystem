@@ -1,6 +1,6 @@
 #pragma once
 #include <string>
-#include "MovieList.h"
+#include "MovieList.cpp"
 
 using namespace std;
 
