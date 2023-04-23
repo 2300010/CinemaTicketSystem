@@ -7,6 +7,7 @@ AVLNode::AVLNode(char value) {
 	this->height = 1;
 	this->left = NULL;
 	this->right = NULL;
+    
 }
 
  
