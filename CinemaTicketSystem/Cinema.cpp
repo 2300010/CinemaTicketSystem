@@ -299,3 +299,13 @@ Cinema::RoomNode* Cinema::SearchRoomById(RoomNode* root, int roomId)
 //
 //	}
 //}
+
+
+//				TEST!!
+//void main() 
+//{
+//	//TEST BINARY TREE
+//    int roomAmount = 7;
+//
+//	//cout << "The room id is: " << Cinema::SearchRoomById(Cinema::GetRoot(), 7)->room.GetIdNumber() << endl;
+//}

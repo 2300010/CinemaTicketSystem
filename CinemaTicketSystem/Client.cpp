@@ -49,3 +49,14 @@ int Client::GetAge()
 
 	}
 }
+
+MovieList Client::GetMoviesWatched()
+{
+	return watchedMovies;
+}
+
+//Method that adds a movie to moviesWatched
+void Client::AddWatchedMovies(Movie newWatchedMovie) 
+{
+	watchedMovies.insertAtBeginning(newWatchedMovie);
+}

@@ -127,6 +127,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="AVLMovieTitleTree.cpp" />
     <ClCompile Include="Cinema.cpp" />
     <ClCompile Include="CinemaTicketSystem.cpp" />
     <ClCompile Include="Client.cpp" />
@@ -142,6 +143,7 @@
     <ClCompile Include="Ticket.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="AVLMovieTitleTree.h" />
     <ClInclude Include="Cinema.h" />
     <ClInclude Include="Client.h" />
     <ClInclude Include="ERoomType.h" />

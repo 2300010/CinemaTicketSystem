@@ -16,9 +16,6 @@ int main()
 
     system("Pause");
 
-    cout << "The room id is: " << cinema.SearchRoomById(cinema.GetRoot(), 7)->room.GetIdNumber() << endl;
-
-    
 }
 
 

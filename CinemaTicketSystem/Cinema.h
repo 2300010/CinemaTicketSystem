@@ -34,9 +34,6 @@ class Cinema
 	int roomAmount = 0;
 	RoomNode* root = nullptr;
 
-	//Declare array for time slots
-	//Schedule timeSlots[12];
-
 	//Declare vector to receive the schedule of every projections
 	vector<Schedule> cinemaSchedule;
 
