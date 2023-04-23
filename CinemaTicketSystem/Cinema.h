@@ -69,6 +69,11 @@ public:
 	//Method to create the room binary tree
 	void CreateRoomBinaryTree();
 
+	//Method to declare movies
+	void SetAvailableMovies();
+	MovieList GetAvailableMovies();
+
+
 	//Method that creates a RoomNode
 	RoomNode* CreateRoomNode(Room newRoom);
 

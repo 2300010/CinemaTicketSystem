@@ -14,9 +14,13 @@ int main()
 
     cout << "All Good?" << endl;
 
+    cinema.SetAvailableMovies();
+
     system("Pause");
 
-    cout << "The room id is: " << cinema.SearchRoomById(cinema.GetRoot(), 7)->room.GetIdNumber() << endl;
+    cout << cinema.GetAvailableMovies().getNodeAtPosition(2)->GetTitle();
+
+   // cout << "The room id is: " << cinema.SearchRoomById(cinema.GetRoot(), 7)->room.GetIdNumber() << endl;
 
     
 }

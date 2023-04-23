@@ -3,11 +3,6 @@
 
 //Definition
 //Declare constructor and destructor
-Movie::Movie() 
-{
-
-}
-
 Movie::Movie(string title, float length, Genre genre, string director, string mainActor, int rating)
 {
 	try
