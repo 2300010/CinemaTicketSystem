@@ -214,6 +214,30 @@ void Cinema::CreateRoomBinaryTree()
 	}
 }
 
+void Cinema::SetAvailableMovies()
+{
+	try
+	{
+		availableMovies.insert("Back to the Future", 1.5, Action, "Robert Zemeckis", "Michael J. Fox", 8);
+		availableMovies.insert("The Godfather", 2.75, Drama, "Francis Ford Coppola", "Marlon Brando", 9);
+		availableMovies.insert("The Shawshank Redemption", 2.5, Drama, "Frank Darabont", "Tim Robbins", 9);
+		availableMovies.insert("The Dark Knight", 2.25, Action, "Christopher Nolan", "Christian Bale", 9);
+		availableMovies.insert("Pulp Fiction", 2.33, Action, "Quentin Tarantino", "John Travolta", 8);
+		availableMovies.insert("Forrest Gump", 2.67, Drama, "Robert Zemeckis", "Tom Hanks", 8);
+		availableMovies.insert("The Matrix", 2, Action, "Lana Wachowski", "Keanu Reeves", 8);
+		
+	}
+	catch (...)
+	{
+
+	}
+}
+
+MovieList Cinema::GetAvailableMovies()
+{
+	return availableMovies;
+}
+
 //Method that creates a RoomNode
 Cinema::RoomNode* Cinema::CreateRoomNode(Room newRoom)
 {

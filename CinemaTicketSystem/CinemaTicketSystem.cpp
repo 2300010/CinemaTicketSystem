@@ -14,6 +14,8 @@ int main()
 
     cout << "All Good?" << endl;
 
+    cinema.SetAvailableMovies();
+
     system("Pause");
 
 }
