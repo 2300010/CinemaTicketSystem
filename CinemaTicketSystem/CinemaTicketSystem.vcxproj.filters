@@ -57,6 +57,9 @@
     <ClCompile Include="AVLMovieTitleTree.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="SuggestionDecisionTree.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Cinema.h">
@@ -93,6 +96,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="AVLMovieTitleTree.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SuggestionDecisionTree.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
