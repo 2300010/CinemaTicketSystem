@@ -23,7 +23,7 @@ public:
 
 	//SIGNATURES
 	//Declare constructor and destructor
-
+	Movie();
 	Movie(string title, float length, Genre genre, string director, string mainActor, int rating);
 	~Movie();
 	// Linked List node 

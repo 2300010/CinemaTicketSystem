@@ -28,6 +28,8 @@ Cinema::Cinema(int roomAmount)
 		InitiateCinemaRoomVector();
 
 		CreateRoomBinaryTree();
+
+		//GenerateSchedule();
 	}
 	catch (...)
 	{
@@ -89,12 +91,60 @@ void Cinema::SetRoot(RoomNode* newRoot)
 	}
 }
 
+//Method that manages and returns the number of time slots required for a movie
+int Cinema::TimeSlotsRequired(Movie* scheduledMovie)
+{
+	//Declare variable to receive movie length
+	float movieLength = scheduledMovie->GetLength();
+
+	//Verify if movie length fits perfectly in time slots
+	if (fmod(movieLength, 1) == 0) 
+	{
+		return movieLength;
+	} //If it does not
+	else
+	{
+		return movieLength + 1;
+	}
+}
+
 //Methode that generates a schedule for every movie
 void Cinema::GenerateSchedule() 
 {
 	try
 	{
+		//Declare a variable to represent actual time slot and to receive number of time slots required
+		int actualTimeSlot = OPENING_TIME;
+		int tempTimeSlotsRequired = 0;
+		int cinemaScheduleLength = 0;
 
+		//Loop for every cinema rooms
+		for (int i = 0; i < roomAmount; i++)
+		{
+			//Set timeSlotsRequired
+			tempTimeSlotsRequired = TimeSlotsRequired(availableMovies.getNodeAtPosition(i));
+
+			//Loop until all time slots are filled and until length of movie ends after closing
+			while (actualTimeSlot < CLOSING_TIME && actualTimeSlot + tempTimeSlotsRequired <= CLOSING_TIME)
+			{
+				//Generate a new schedule for actual movie
+				Schedule movieSchedule(availableMovies.getNodeAtPosition(i), actualTimeSlot,
+					actualTimeSlot + availableMovies.getNodeAtPosition(i)->GetLength(),
+					SearchRoomById(root, i)->room.GetIdNumber());
+
+				//Set cinemaSchedule "i" to the movieSchedule
+				cinemaSchedule[i] = movieSchedule;
+
+				//Loop until every required time slots required are filled
+				for (int j = 0; j < tempTimeSlotsRequired; j++)
+				{
+					actualTimeSlot++;
+				}
+			}
+
+			//Reset actualTimeSlot
+			actualTimeSlot = OPENING_TIME;
+		}
 	}
 	catch (...)
 	{
@@ -105,33 +155,40 @@ void Cinema::GenerateSchedule()
 //Method that instanciates the Cinema's room list
 void Cinema::InitiateCinemaRoomVector() 
 {
-	//Loop to initiate every room of cinema
-	for (int i = 0;  i < roomAmount;  i++)
+	try
 	{
-		if (i < 5) 
+		//Loop to initiate every room of cinema
+		for (int i = 0; i < roomAmount; i++)
 		{
-			//Declare a room temporary room object
-			Room tempRoom(i + 1, 250, 10, Regular);
+			if (i < 5)
+			{
+				//Declare a room temporary room object
+				Room tempRoom(i + 1, 250, 10, Regular);
 
-			//Add tempRoom to room list
-			cinemaRooms.push_back(tempRoom);
-		}
-		else if (i < 6)
-		{
-			//Declare a room temporary room object
-			Room tempRoom(i + 1, 200, 13, ThreeD);
-			
-			//Add tempRoom to room list
-			cinemaRooms.push_back(tempRoom);
-		}
-		else
-		{
-			//Declare a room temporary room object
-			Room tempRoom(i + 1, 100, 18, AVX);
+				//Add tempRoom to room list
+				cinemaRooms.push_back(tempRoom);
+			}
+			else if (i < 6)
+			{
+				//Declare a room temporary room object
+				Room tempRoom(i + 1, 200, 13, ThreeD);
 
-			//Add tempRoom to room list
-			cinemaRooms.push_back(tempRoom);
-		}	
+				//Add tempRoom to room list
+				cinemaRooms.push_back(tempRoom);
+			}
+			else
+			{
+				//Declare a room temporary room object
+				Room tempRoom(i + 1, 100, 18, AVX);
+
+				//Add tempRoom to room list
+				cinemaRooms.push_back(tempRoom);
+			}
+		}
+	}
+	catch (...)
+	{
+
 	}
 }
 
@@ -140,9 +197,6 @@ void Cinema::CreateRoomBinaryTree()
 {
 	try
 	{
-		//Declare an empty node for the start of creation
-		//RoomNode* root = GetRoot();
-
 		//Insert the rooms
 		SetRoot(AddRoomNode(root, cinemaRooms.at(3)));
 

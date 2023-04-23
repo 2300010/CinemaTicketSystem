@@ -1,7 +1,40 @@
 #include "Schedule.h"
 
 //DEFINITIONS
+//Declare constructor
+Schedule::Schedule(Movie* scheduledMovie, float startingTime, float endingTime, int roomId) 
+{
+	this->scheduledMovie = scheduledMovie;
+	this->startingTime = startingTime;
+	this->endingTime = endingTime;
+	this->roomId = roomId;
+}
+
 //Declare getters and setters
+Movie* Schedule::GetScheduledMovie() 
+{
+	try
+	{
+		return scheduledMovie;
+	}
+	catch (...)
+	{
+
+	}
+}
+
+void Schedule::SetScheduledMovie(Movie* scheduledMovie) 
+{
+	try
+	{
+		this->scheduledMovie = scheduledMovie;
+	}
+	catch (...)
+	{
+
+	}
+}
+
 float Schedule::GetStartingTime() 
 {
 	try
