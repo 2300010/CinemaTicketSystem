@@ -102,18 +102,18 @@ public:
         return temp;
     }
 
-    Movie getMovieByName(string name) {
+    Movie* getMovieByName(string name) {
         Movie* temp = head;
         int count = 0;
         while (temp != NULL) {
             temp = temp->next;
             if (temp->GetTitle() == name) {
-                return temp[0];
+                return temp;
             }
             count++;
         }
         cout << "No Movie Found";
-        return;
+        return temp;
     }
 
 

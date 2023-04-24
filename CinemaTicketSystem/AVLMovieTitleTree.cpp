@@ -2,8 +2,8 @@
 #include <iostream>
 
 
-AVLNode::AVLNode(Movie movie) {
-    this->value = tolower(movie.GetTitle().at(0));
+AVLNode::AVLNode(Movie* movie) {
+    this->value = tolower(movie->GetTitle().at(0));
 	this->height = 1;
 	this->left = NULL;
 	this->right = NULL;
@@ -20,7 +20,7 @@ AVLMovieTitleTree::AVLMovieTitleTree(MovieList list) {
     root = NULL;
     for (int i = 0; i < list.getLength(); i++) {
         cout << list.getNodeAtPosition(i)->GetTitle().at(0);
-        root = insert(root, tolower(list.getNodeAtPosition(i)->GetTitle().at(0)));
+        root = insert(root, list.getNodeAtPosition(i));
     }
 }
 
@@ -72,14 +72,14 @@ int AVLMovieTitleTree::getBalance(AVLNode* node) {
 }
 
 //Value = first character of movie title
-AVLNode* AVLMovieTitleTree::insert(AVLNode* node, Movie movie) {
+AVLNode* AVLMovieTitleTree::insert(AVLNode* node, Movie* movie) {
     if (node == NULL) {
         return new AVLNode(movie);
     }
-    if (movie.GetTitle().at(0) < node->value) {
+    if (movie->GetTitle().at(0) < node->value) {
         node->left = insert(node->left, movie);
     }
-    else if (movie.GetTitle().at(0) > node->value) {
+    else if (movie->GetTitle().at(0) > node->value) {
         node->right = insert(node->right, movie);
     }
     else {
@@ -87,17 +87,17 @@ AVLNode* AVLMovieTitleTree::insert(AVLNode* node, Movie movie) {
     }
     node->height = 1 + max(height(node->left), height(node->right));
     int balance = getBalance(node);
-    if (balance > 1 && movie.GetTitle().at(0) < node->left->value) {
+    if (balance > 1 && movie->GetTitle().at(0) < node->left->value) {
         return rotateRight(node);
     }
-    if (balance < -1 && movie.GetTitle().at(0) > node->right->value) {
+    if (balance < -1 && movie->GetTitle().at(0) > node->right->value) {
         return rotateLeft(node);
     }
-    if (balance > 1 && movie.GetTitle().at(0) > node->left->value) {
+    if (balance > 1 && movie->GetTitle().at(0) > node->left->value) {
         node->left = rotateLeft(node->left);
         return rotateRight(node);
     }
-    if (balance < -1 && movie.GetTitle().at(0) < node->right->value) {
+    if (balance < -1 && movie->GetTitle().at(0) < node->right->value) {
         node->right = rotateRight(node->right);
         return rotateLeft(node);
     }

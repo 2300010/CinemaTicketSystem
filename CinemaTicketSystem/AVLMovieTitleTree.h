@@ -8,12 +8,12 @@ using namespace std;
 class AVLNode {
 public:
 	char value;
-    Movie movie;
+    Movie* movie;
 	int height;
 	AVLNode* left;
 	AVLNode* right;
     //Value = first character of movie title
-	AVLNode(Movie movie);
+	AVLNode(Movie* movie);
 };
 
 class AVLMovieTitleTree
@@ -21,7 +21,7 @@ class AVLMovieTitleTree
 public:
 	AVLMovieTitleTree();
 	AVLMovieTitleTree(MovieList list);
-    AVLNode* insert(AVLNode* node, Movie value);
+    AVLNode* insert(AVLNode* node, Movie* value);
     AVLNode* remove(AVLNode* node, char value);
     AVLNode* search(AVLNode* node, char value);
     void inOrderSearch(AVLNode* node);

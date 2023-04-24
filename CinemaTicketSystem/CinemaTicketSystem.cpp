@@ -14,8 +14,6 @@ int main()
 
     Cinema cinema = Cinema(roomAmount);
 
-    cout << "All Good?" << endl;
-
     cinema.SetAvailableMovies();
 
     cinema.GenerateSchedule();
@@ -23,7 +21,6 @@ int main()
     ReservationManager myManager = ReservationManager();
 
     myManager.MovieSelection(cinema, tempClient);
-
 
     system("Pause");
 

@@ -55,7 +55,9 @@ void ReservationManager::MovieSelection(Cinema localCinema, Client newClient)
 
 						AddReservationToQueue(tempReservation);
 
-						cout << "Your reservation as been made.";
+						cout << "Your reservation as been made.\n";
+
+						timeSlotSelected = '0';
 					}
 
 				} while (timeSlotSelected != '0');
@@ -84,6 +86,8 @@ void ReservationManager::MovieSelection(Cinema localCinema, Client newClient)
 						AddReservationToQueue(tempReservation);
 
 						cout << "Your reservation as been made.\n";
+
+						timeSlotSelected = '0';
 					}
 
 				} while (timeSlotSelected != '0');
@@ -112,6 +116,8 @@ void ReservationManager::MovieSelection(Cinema localCinema, Client newClient)
 						AddReservationToQueue(tempReservation);
 
 						cout << "Your reservation as been made.\n";
+
+						timeSlotSelected = '0';
 					}
 
 				} while (timeSlotSelected != '0');
@@ -140,6 +146,8 @@ void ReservationManager::MovieSelection(Cinema localCinema, Client newClient)
 						AddReservationToQueue(tempReservation);
 
 						cout << "Your reservation as been made.\n";
+
+						timeSlotSelected = '0';
 					}
 
 				} while (timeSlotSelected != '0');
@@ -168,6 +176,8 @@ void ReservationManager::MovieSelection(Cinema localCinema, Client newClient)
 						AddReservationToQueue(tempReservation);
 
 						cout << "Your reservation as been made.\n";
+
+						timeSlotSelected = '0';
 					}
 
 				} while (timeSlotSelected != '0');
@@ -196,6 +206,8 @@ void ReservationManager::MovieSelection(Cinema localCinema, Client newClient)
 						AddReservationToQueue(tempReservation);
 
 						cout << "Your reservation as been made.\n";
+
+						timeSlotSelected = '0';
 					}
 
 				} while (timeSlotSelected != '0');
@@ -224,6 +236,8 @@ void ReservationManager::MovieSelection(Cinema localCinema, Client newClient)
 						AddReservationToQueue(tempReservation);
 
 						cout << "Your reservation as been made.\n";
+
+						timeSlotSelected = '0';
 					}
 
 				} while (timeSlotSelected != '0');
@@ -255,11 +269,11 @@ Schedule ReservationManager::SelectedSchedule(char selectedTimeSlot, vector<Sche
 	{
 		Schedule selectedSchedule;
 
-		int convertedTimeSlot = (int)selectedTimeSlot - 1;
+		int convertedTimeSlot = int(selectedTimeSlot) - 48;
 
 		if (convertedTimeSlot > 0 || convertedTimeSlot < 8) 
 		{
-			selectedSchedule = scheduleList.at(convertedTimeSlot);
+			selectedSchedule = scheduleList.at(convertedTimeSlot - 1);
 		}
 
 		return selectedSchedule;
