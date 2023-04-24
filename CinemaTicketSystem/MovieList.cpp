@@ -101,6 +101,22 @@ public:
         }
         return temp;
     }
+
+    Movie getMovieByName(string name) {
+        Movie* temp = head;
+        int count = 0;
+        while (temp != NULL) {
+            temp = temp->next;
+            if (temp->GetTitle() == name) {
+                return temp[0];
+            }
+            count++;
+        }
+        cout << "No Movie Found";
+        return;
+    }
+
+
     //Get Length: This function is used to get the number of nodes in the list.
     int getLength() {
         Movie* temp = head;
