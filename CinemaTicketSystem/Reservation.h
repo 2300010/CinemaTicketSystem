@@ -2,28 +2,30 @@
 
 #include <iostream>
 #include "Client.h"
+#include "Cinema.h"
+
 
 class Reservation
 {
 	//Declare variables for the informations of a reservation
 	int reservationId;
 	Client actualClient;
-	Movie selectedMovie;
-	Room selectedRoom;
+	Schedule selectedSchedule;
 
 public:
 	
 	//SIGNATURE
 	//Declare constructor
-	Reservation(int newReservationId, Client newActualClient, Movie newSelectedMovie);
+	Reservation(int newReservationId, Client newActualClient, Schedule newSelectedSchedule);
+	Reservation();
 
 	//Declare getters and setters
 	void SetReservationId(int newId);
 	int GetReservationId();
 	void SetActualClient(Client newClient);
 	Client GetActualClient();
-	void SetSelectedMovie(Movie newMovie);
-	Movie GetSelectedMovie();
+	void SetSelectedSchedule(Schedule newSelectedSchedule);
+	Schedule GetSelectedSchedule();
 
 };
 

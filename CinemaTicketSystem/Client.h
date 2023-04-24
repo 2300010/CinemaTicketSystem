@@ -17,6 +17,12 @@ class Client
 public:
 
 	//SIGNATURES
+	
+	//Declare constructors
+	Client(string name, int age);
+	Client();
+	~Client();
+
 	//Declare getters and setters
 	void SetName(string nameOfClient);
 	string GetName();

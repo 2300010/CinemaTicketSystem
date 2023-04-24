@@ -1,6 +1,18 @@
 #include "Client.h"
 
 //DEFINITIONS
+
+//Declare constructors
+Client::Client(string name, int age) 
+{
+	this->name = name;
+	this->age = age;
+}
+
+Client::Client(){}
+
+Client::~Client(){}
+ 
 //Declare getters and setters
 void Client::SetName(string nameOfClient) 
 {

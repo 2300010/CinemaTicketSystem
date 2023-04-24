@@ -37,6 +37,11 @@ Cinema::Cinema(int roomAmount)
 	}
 }
 
+Cinema::Cinema() 
+{
+
+}
+
 Cinema::~Cinema() 
 {
 
@@ -91,20 +96,32 @@ void Cinema::SetRoot(RoomNode* newRoot)
 	}
 }
 
+vector<Schedule> Cinema::GetCinemaSchedule() 
+{
+	return cinemaSchedule;
+}
+
 //Method that manages and returns the number of time slots required for a movie
 int Cinema::TimeSlotsRequired(Movie* scheduledMovie)
 {
-	//Declare variable to receive movie length
-	float movieLength = scheduledMovie->GetLength();
+	try
+	{
+		//Declare variable to receive movie length
+		float movieLength = scheduledMovie->GetLength();
 
-	//Verify if movie length fits perfectly in time slots
-	if (fmod(movieLength, 1) == 0) 
+		//Verify if movie length fits perfectly in time slots
+		if (fmod(movieLength, 1) == 0)
+		{
+			return movieLength;
+		} //If it does not
+		else
+		{
+			return movieLength + 1;
+		}
+	}
+	catch (...)
 	{
-		return movieLength;
-	} //If it does not
-	else
-	{
-		return movieLength + 1;
+
 	}
 }
 
@@ -124,16 +141,18 @@ void Cinema::GenerateSchedule()
 			//Set timeSlotsRequired
 			tempTimeSlotsRequired = TimeSlotsRequired(availableMovies.getNodeAtPosition(i));
 
+			int idToFind = i + 1;
+
 			//Loop until all time slots are filled and until length of movie ends after closing
 			while (actualTimeSlot < CLOSING_TIME && actualTimeSlot + tempTimeSlotsRequired <= CLOSING_TIME)
 			{
 				//Generate a new schedule for actual movie
 				Schedule movieSchedule(availableMovies.getNodeAtPosition(i), actualTimeSlot,
 					actualTimeSlot + availableMovies.getNodeAtPosition(i)->GetLength(),
-					SearchRoomById(root, i)->room.GetIdNumber());
+					SearchRoomById(root, idToFind)->room.GetIdNumber());
 
 				//Set cinemaSchedule "i" to the movieSchedule
-				cinemaSchedule[i] = movieSchedule;
+				cinemaSchedule.push_back(movieSchedule);
 
 				//Loop until every required time slots required are filled
 				for (int j = 0; j < tempTimeSlotsRequired; j++)

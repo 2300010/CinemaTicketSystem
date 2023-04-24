@@ -14,7 +14,6 @@ class Movie
 	string director;
 	string mainActor;
 	int rating;
-
 	
 
 public:

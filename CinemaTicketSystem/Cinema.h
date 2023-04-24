@@ -46,6 +46,7 @@ public:
 	//Declare constructor and destructor
 	Cinema(MovieList, int roomAmount);
 	Cinema(int roomAmount);
+	Cinema();
 	~Cinema();
 
 	//Declare getters and setters
@@ -53,6 +54,7 @@ public:
 	void SetRoomAmount(int newAmount);
 	RoomNode* GetRoot();
 	void SetRoot(RoomNode* root);
+	vector<Schedule> GetCinemaSchedule();
 
 	//Method that returns the number of time slots required for a movie
 	int TimeSlotsRequired(Movie* scheduledMovie);
@@ -69,7 +71,6 @@ public:
 	//Method to declare movies
 	void SetAvailableMovies();
 	MovieList GetAvailableMovies();
-
 
 	//Method that creates a RoomNode
 	RoomNode* CreateRoomNode(Room newRoom);

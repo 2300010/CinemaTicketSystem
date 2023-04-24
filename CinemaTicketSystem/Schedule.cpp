@@ -1,7 +1,9 @@
 #include "Schedule.h"
 
 //DEFINITIONS
-//Declare constructor
+//Declare constructors
+Schedule::Schedule() {}
+
 Schedule::Schedule(Movie* scheduledMovie, float startingTime, float endingTime, int roomId) 
 {
 	this->scheduledMovie = scheduledMovie;

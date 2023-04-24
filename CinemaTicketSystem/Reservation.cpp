@@ -2,40 +2,91 @@
 
 //SIGNATURE
 //Declare constructor
-Reservation::Reservation(int newReservationId, Client newActualClient, Movie newSelectedMovie) 
+Reservation::Reservation(int newReservationId, Client newActualClient, Schedule newSelectedSchedule) 
 {
-	this->reservationId = newReservationId;
-	this->actualClient = newActualClient;
-	this->selectedMovie = newSelectedMovie;
+	try
+	{
+		this->reservationId = newReservationId;
+		this->actualClient = newActualClient;
+		this->selectedSchedule = newSelectedSchedule;
+	}
+	catch (...)
+	{
+
+	}
 }
+
+Reservation::Reservation(){}
 
 //Declare getters and setters
 void Reservation::SetReservationId(int newId) 
 {
-	reservationId = newId;
+	try
+	{
+		reservationId = newId;
+	}
+	catch (...)
+	{
+
+	}
 }
 
 int Reservation::GetReservationId() 
 {
-	return reservationId;
+	try
+	{
+		return reservationId;
+	}
+	catch (...)
+	{
+
+	}
 }
 
 void Reservation::SetActualClient(Client newClient) 
 {
-	actualClient = newClient;
+	try
+	{
+		actualClient = newClient;
+	}
+	catch (...)
+	{
+
+	}
 }
 
 Client Reservation::GetActualClient() 
 {
-	return actualClient;
+	try
+	{
+		return actualClient;
+	}
+	catch (...)
+	{
+
+	}
 }
 
-void Reservation::SetSelectedMovie(Movie newMovie)
+void Reservation::SetSelectedSchedule(Schedule newSelectedSchedule)
 {
-	selectedMovie = newMovie;
+	try
+	{
+		selectedSchedule = newSelectedSchedule;
+	}
+	catch (...)
+	{
+
+	}
 }
 
-Movie Reservation::GetSelectedMovie() 
+Schedule Reservation::GetSelectedSchedule() 
 {
-	return selectedMovie;
+	try
+	{
+		return selectedSchedule;
+	}
+	catch (...)
+	{
+
+	}
 }
