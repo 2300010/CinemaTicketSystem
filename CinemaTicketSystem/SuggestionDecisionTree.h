@@ -36,7 +36,7 @@ private:
 public:
     SuggestionDecisionTree();
     ~SuggestionDecisionTree();
-    void addMovie(Movie m);
+    void addMovie(string title, vector<string> keywords);
     void buildTree();
     void traverse(Node* node);
     vector<Movie> suggestMovies(Genre genre, float length, string director, string actor, int rating);

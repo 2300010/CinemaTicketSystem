@@ -29,26 +29,26 @@ void SuggestionDecisionTree::destroySubtree(Node* node)
 }
 
 void SuggestionDecisionTree::addMovie(string title, vector<string> keywords) {
-    // Start at the root of the tree
-    SuggestionDecisionTree::SuggestionTreeNode* current = root; //Need to add SuggestionTreeNode in .h
+    //// Start at the root of the tree
+    //SuggestionDecisionTree::SuggestionTreeNode* current = root; //Need to add SuggestionTreeNode in .h
 
-    // Traverse the tree until a leaf node is found
-    while (!current->isLeafNode()) {
-        bool matchFound = false;
-        for (SuggestionTreeNode* child : current->getChildren()) {
-            if (child->matches(keywords)) {
-                current = child;
-                matchFound = true;
-                break;
-            }
-        }
-        if (!matchFound) {
-            break;
-        }
-    }
+    //// Traverse the tree until a leaf node is found
+    //while (!current->isLeafNode()) {
+    //    bool matchFound = false;
+    //    for (SuggestionTreeNode* child : current->getChildren()) {
+    //        if (child->matches(keywords)) {
+    //            current = child;
+    //            matchFound = true;
+    //            break;
+    //        }
+    //    }
+    //    if (!matchFound) {
+    //        break;
+    //    }
+    //}
 
-    // Add the new movie to the leaf node
-    current->addMovie(title, keywords);
+    //// Add the new movie to the leaf node
+    //current->addMovie(title, keywords);
 }
 
  void SuggestionDecisionTree::buildTree()
