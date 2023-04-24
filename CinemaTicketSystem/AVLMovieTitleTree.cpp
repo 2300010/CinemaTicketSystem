@@ -2,12 +2,13 @@
 #include <iostream>
 
 
-AVLNode::AVLNode(char value) {
-    this->value = tolower(value);
+AVLNode::AVLNode(Movie movie) {
+    this->value = tolower(movie.GetTitle().at(0));
 	this->height = 1;
 	this->left = NULL;
 	this->right = NULL;
-    
+    this->movie = movie;
+
 }
 
  
@@ -71,32 +72,32 @@ int AVLMovieTitleTree::getBalance(AVLNode* node) {
 }
 
 //Value = first character of movie title
-AVLNode* AVLMovieTitleTree::insert(AVLNode* node, char value) {
+AVLNode* AVLMovieTitleTree::insert(AVLNode* node, Movie movie) {
     if (node == NULL) {
-        return new AVLNode(value);
+        return new AVLNode(movie);
     }
-    if (value < node->value) {
-        node->left = insert(node->left, value);
+    if (movie.GetTitle().at(0) < node->value) {
+        node->left = insert(node->left, movie);
     }
-    else if (value > node->value) {
-        node->right = insert(node->right, value);
+    else if (movie.GetTitle().at(0) > node->value) {
+        node->right = insert(node->right, movie);
     }
     else {
         return node;
     }
     node->height = 1 + max(height(node->left), height(node->right));
     int balance = getBalance(node);
-    if (balance > 1 && value < node->left->value) {
+    if (balance > 1 && movie.GetTitle().at(0) < node->left->value) {
         return rotateRight(node);
     }
-    if (balance < -1 && value > node->right->value) {
+    if (balance < -1 && movie.GetTitle().at(0) > node->right->value) {
         return rotateLeft(node);
     }
-    if (balance > 1 && value > node->left->value) {
+    if (balance > 1 && movie.GetTitle().at(0) > node->left->value) {
         node->left = rotateLeft(node->left);
         return rotateRight(node);
     }
-    if (balance < -1 && value < node->right->value) {
+    if (balance < -1 && movie.GetTitle().at(0) < node->right->value) {
         node->right = rotateRight(node->right);
         return rotateLeft(node);
     }
